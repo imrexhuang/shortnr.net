@@ -1,6 +1,7 @@
 ﻿using Shortnr.Web.Business;
 using Shortnr.Web.Entities;
 using Shortnr.Web.Models;
+using Shortnr.Web.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,18 @@ namespace Shortnr.Web.Controllers
 	public class UrlController : Controller
 	{
 		private IUrlManager _urlManager;
+	    private LogU log = new LogU(typeof(UrlController));
 
-		public UrlController(IUrlManager urlManager)
+        public UrlController(IUrlManager urlManager)
 		{
 			this._urlManager = urlManager;
-		}
+        }
 
 		[HttpGet]
 		public ActionResult Index()
 		{
-			Url url = new Url();
+
+            Url url = new Url();
 			return View(url);
 		}
 
@@ -30,7 +33,8 @@ namespace Shortnr.Web.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				ShortUrl shortUrl = await this._urlManager.ShortenUrl(url.LongURL, Request.UserHostAddress, url.CustomSegment);
+			    log.Info("Request.UserHostAddress=>"+ Request.UserHostAddress);
+                ShortUrl shortUrl = await this._urlManager.ShortenUrl(url.LongURL, Request.UserHostAddress, url.CustomSegment);
 				url.ShortURL = string.Format("{0}://{1}{2}{3}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"), shortUrl.Segment);
 			}
 			return View(url);

@@ -1,4 +1,5 @@
-﻿using Shortnr.Web.Data;
+﻿using log4net;
+using Shortnr.Web.Data;
 using Shortnr.Web.Entities;
 using Shortnr.Web.Exceptions;
 using System;
@@ -14,7 +15,9 @@ namespace Shortnr.Web.Business.Implementations
 {
 	public class UrlManager : IUrlManager
 	{
-		public Task<ShortUrl> ShortenUrl(string longUrl, string ip, string segment = "")
+        ILog log = log4net.LogManager.GetLogger(typeof(UrlManager));
+
+        public Task<ShortUrl> ShortenUrl(string longUrl, string ip, string segment = "")
 		{
 			return Task.Run(() =>
 			{
@@ -37,11 +40,13 @@ namespace Shortnr.Web.Business.Implementations
 					request.Timeout = 10000;
 					try
 					{
-						HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+						//HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 					}
-					catch (Exception)
+					catch (Exception ex)
 					{
-						throw new ShortnrNotFoundException();
+                        log.Info("ex:"+ex.ToString ());
+
+                        throw new ShortnrNotFoundException();
 					}
 
 					int cap = 0;
@@ -61,7 +66,7 @@ namespace Shortnr.Web.Business.Implementations
 							throw new ShortnrConflictException();
 						}
 						if (segment.Length > 20 || !Regex.IsMatch(segment, @"^[A-Za-z\d_-]+$"))
-						{
+                        {
 							throw new ArgumentException("Malformed or too long segment");
 						}
 					}

@@ -1,9 +1,9 @@
+using Microsoft.Practices.Unity;
 using Shortnr.Web.Business;
 using Shortnr.Web.Business.Implementations;
 using System;
 using System.Web.Http;
-using Unity;
-using Unity.AspNet.WebApi;
+using Unity.WebApi;
 
 namespace Shortnr.Web
 {
@@ -24,6 +24,7 @@ namespace Shortnr.Web
 		public static void RegisterTypes(IUnityContainer container)
 		{
 			container.RegisterType<IUrlManager, UrlManager>();
+			GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
 		}
 	}
 }

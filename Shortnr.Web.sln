@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shortnr.Web", "Shortnr.Web\Shortnr.Web.csproj", "{E59A149E-C578-481B-A0B3-ABF287160565}"
 EndProject
@@ -13,12 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shortnr.Web.Entities", "Sho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shortnr.Web.Exceptions", "Shortnr.Web.Exceptions\Shortnr.Web.Exceptions.csproj", "{D134D44C-1167-41D0-A1F2-CD12A10031ED}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{299B65E5-D268-4E07-8E6D-0E07922493D4}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		LICENSE = LICENSE
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shortnr.Web.Utility", "Shortnr.Web.Utility\Shortnr.Web.Utility.csproj", "{BA1FC58B-8ADA-416B-8FE4-25B8A2CB061E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,11 +41,15 @@ Global
 		{D134D44C-1167-41D0-A1F2-CD12A10031ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D134D44C-1167-41D0-A1F2-CD12A10031ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D134D44C-1167-41D0-A1F2-CD12A10031ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1FC58B-8ADA-416B-8FE4-25B8A2CB061E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1FC58B-8ADA-416B-8FE4-25B8A2CB061E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1FC58B-8ADA-416B-8FE4-25B8A2CB061E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1FC58B-8ADA-416B-8FE4-25B8A2CB061E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B2F7DF20-794B-4AB8-8996-E0F5D2A51D8D}
+		SolutionGuid = {98FD9525-6F3B-4CEE-AFAB-5614D040A2CE}
 	EndGlobalSection
 EndGlobal

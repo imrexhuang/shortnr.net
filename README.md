@@ -1,7 +1,16 @@
-# Shortnr.net - URL shortener built in ASP.NET
+# Shortnr.net for SQL Server
+Fork from Shortnr.net and this is for SQL Server
+I also add log4net and Elmah.
 
-This is a very simple URL shortener built in the ASP.NET MVC and Web API frameworks. This code is part of a tutorial: https://ducode.org/posts/tutorial-url-shortner-asp-net/
+Requirement:
+.NET Framework 4.5 above
+SQL Server 2012 above
+
+Default log path:
+D:\logs\shortnr\
 
 ![Shortnr.net in action](/screen.png)
 
-For installation instructions, read the article mentioned above.
+Original author:
+~~https://ducode.org/tutorial-url-shortener-in-asp-net.html~~
+~~https://github.com/dukeofharen/shortnr.net~~
